@@ -1,2 +1,6 @@
-# ComputerScience
-Linear, Non-linear Data Structures and Algorithms in python and C++
+# ComputerScience - Linear Data Structures
+- Stack
+- Queue
+- Dequeue
+- Lists
+- in python and C++
