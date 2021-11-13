@@ -1,2 +1,4 @@
-# ComputerScience
-Linear, Non-linear Data Structures and Algorithms in python and C++
+# ComputerScience - Non-linear Data Structures
+- Trees
+- Graphs
+- in python and C++
