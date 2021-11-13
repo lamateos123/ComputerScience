@@ -1,5 +1,5 @@
 # ComputerScience - Algorithms
-Recusion
-Search
-Sorting
-in python and C++
+- Recusion
+- Search
+- Sorting
+- in python and C++
