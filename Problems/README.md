@@ -1,2 +1,5 @@
-# ComputerScience
-Linear, Non-linear Data Structures and Algorithms in python and C++
+# ComputerScience - Problems
+- Linear Data Structures
+- Non-linear Data Structures
+- Algorithms 
+- in python and C++
