@@ -36,3 +36,10 @@ int main(){
     selection_sort(nums);
     return 0;
 }
+
+
+/*
+user@pc:~/ComputerScience/Algorithms/Sorting$ ./Selection_Sort 
+6, 5, 7, 4, 8, 3, 1, 9, 2, 
+1, 2, 3, 4, 5, 6, 7, 8, 9, 
+*/
