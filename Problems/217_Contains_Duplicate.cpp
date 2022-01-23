@@ -51,15 +51,18 @@ int main(){
 }
 
 /*
-~/github/ComputerScience/Problems$ ./217_Contains_Duplicate 
+:~/github/ComputerScience/Problems$ ./217_Contains_Duplicate 
 1
 1
 1
 2
-true1
+true
 1
 1
 1
-false1
+1
+false
+1
 2
+true
 */
