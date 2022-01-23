@@ -84,3 +84,20 @@ int main(){
 
     return 0;
 }
+
+/*
+~/github/ComputerScience/Problems$ ./283_Move_Zeros 
+0=0
+1=1
+2=0
+3=3
+4=12
+Zeros2
+1
+3
+12
+0
+1
+1,3,12,0,0,
+1,3,12,0,0,
+*/
