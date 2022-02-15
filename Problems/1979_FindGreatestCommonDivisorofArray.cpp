@@ -32,11 +32,9 @@ int gcda(const vector<int> &nums){
         if (n<mini) mini = n;
         if (n>maxi) maxi = n;        
     }
-
-    cout << mini << " " << maxi << endl;
-    //mini = 5;
+    //cout << mini << " " << maxi << endl;
     for(int i=mini+1; i>=1; i--){
-        cout << maxi%i << " " << mini%i << " " << i << endl;
+        //cout << maxi%i << " " << mini%i << " " << i << endl;
         if((maxi%i == 0) and (mini%i == 0)){
             lcm = i;
         }
@@ -50,3 +48,12 @@ int main(){
     cout << gcda(nums) ;
     return 0;
 }
+/*
+~/Desktop/ComputerScience/Problems$ ./1979_FindGreatestCommonDivisorofArray 
+3 8
+0 3 4
+2 0 3
+0 1 2
+0 0 1
+1
+*/
