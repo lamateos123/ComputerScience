@@ -3,14 +3,15 @@
 
 using namespace std;
 
-vector<int> A = {1,2,4,5,7,8,9,10,30,40,50,80,90,500,800,900};
-int target = 3;
+vector<int> A = {2,3,5,11};//{1,2,4,5,7,8,9,10,30,40,50,80,90,500,800,900,901};
+int target = 11;
 
 bool binary_search(vector<int> A, int target){
     int left = 0;
-    int right = A.size();
+    int right = A.size()-1;
     while(left<=right){
-        int mid = (left+right)/2;
+        //int mid = left + ((unsigned int)left+(unsigned int)right)/2;
+        int mid = left + ((right - left) / 2);
         cout << "target = " << target << " finding A[" << mid << "] = " << A[mid] << endl;
         if (target == A[mid]){
             return true;
