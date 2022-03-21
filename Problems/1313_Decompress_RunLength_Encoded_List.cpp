@@ -1,46 +1,53 @@
 #include<iostream>
 #include<vector>
-#include<unordered_map>
+
 using namespace std;
 
 /*
-# 1287. Element Appearing More Than 25% In Sorted Array
-#-------------------------------------------------------
+# 1313. Decompress Run-Length Encoded List
+#--------------------------------------------
 '''
-Given an integer array sorted in non-decreasing order, there is exactly one 
-integer in the array that occurs more than 25% of the time, return that integer.
-
-
+We are given a list nums of integers representing a list compressed 
+with run-length encoding.
+Consider each adjacent pair of elements 
+[freq, val] = [nums[2*i], nums[2*i+1]] (with i >= 0).  
+For each such pair, there are freq elements with value val 
+concatenated in a sublist. Concatenate all the sublists from 
+left to right to generate the decompressed list.
+Return the decompressed list.
 Example 1:
-
-Input: arr = [1,2,2,6,6,6,6,7,10]
-Output: 6
-
+Input: nums = [1,2,3,4]
+Output: [2,4,4,4]
+Explanation: The first pair [1,2] means we have freq = 1 and val = 2 so we generate the array [2].
+The second pair [3,4] means we have freq = 3 and val = 4 so we generate [4,4,4].
+At the end the concatenation [2] + [4,4,4] is [2,4,4,4].
 Example 2:
-
-Input: arr = [1,1]
-Output: 1
-
+Input: nums = [1,1,2,3]
+Output: [1,3,3]
 '''
 */
 
-int twentyfive(vector<int> arr){
-    unordered_map<int,int> umap;
-    for (auto a:arr){
-        umap[a] += 1;
-        if (umap[a] > arr.size()/4){
-            return a;
+vector<int> decompressEL(vector<int> nums){
+    vector<int> ans = {};
+    for (int i=1; i<nums.size(); i+=2){
+        for (int j=1;j<=nums[i-1]; j++){
+            ans.push_back(nums[i]);
         }
+    }
+    return ans;
+}
+
+int main(){
+    vector<int> nums;
+    vector<int> ans;
+    nums = {1,2,3,4};
+    ans = decompressEL(nums);
+    for (auto a:ans){
+        cout << a << ",";
     }
     return 0;
 }
-
-int main() {
-    vector<int> arr = {1,2,2,6,6,6,6,7,10};
-    cout << twentyfive(arr);
-    return 0;
-}
 /*
-~/github/ComputerScience/Problems$ ./1313_Decompress_RunLength_Encoded_List 
-6
+~/github/ComputerScience/Problems$ ./1287_Element_Appearing_More_Than_25p_In_Sorted_Array 
+2,4,4,4
 */

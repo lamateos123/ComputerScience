@@ -21,18 +21,26 @@ Explanation: The value 5 appears 5 times and the length of the array is 9.
 Thus, 5 is a majority element because 5 > 9/2 is true.
 
 '''
+
+        c = 0
+        for n in nums:
+            if n != target:
+                c += 1
+        if len(nums)/2 > c:
+            return True
+        return False
+
 */
 
 bool majorElement(vector<int> nums, int target){
-    int c = 0;
-    for (auto n:nums){
-        if(n != target){
-            c += 1;
-        }
-    if (nums.size()/2 > c){
-        return true;
+
+    int n = nums.size();
+    int count=0;
+    for(int i=0;i<n;i++){
+        if(nums[i] == target) count++;
     }
-    }
+    if(count > n/2) return true;
+
     return false;
 }
 
@@ -53,8 +61,10 @@ bool majorElementUMap(vector<int> nums, int target){
 }
 
 int main(){
-    vector<int> nums ={2,4,5,5,5,5,5,6,6};
-    int target = 5;
+    vector<int> nums;// ={2,4,5,5,5,5,5,6,6};
+    nums = {10,100,101,101};
+
+    int target = 101;//5;
     cout << "with List" << endl;
     cout << boolalpha << majorElement(nums, target);
     cout << endl << "with UMap" << endl;
@@ -63,13 +73,12 @@ int main(){
 }
 
 /*
-~/Desktop/ComputerScience/Problems$ ./1150_CheckIfaNumberIsMajorityElementinaSortedArray 
+~/github/ComputerScience/Problems$ ./1150_CheckIfaNumberIsMajorityElementinaSortedArray 
 with List
-true
+false
 with UMap
-6,2
-5,5
-4,1
-2,1
-true
+100,1
+101,2
+10,1
+false
 */

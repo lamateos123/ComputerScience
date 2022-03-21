@@ -35,22 +35,10 @@ Total time = 7 seconds
 
 int visitTime(vector<vector<int>> &points){
     int ans = 0;
-    int temp_x = 0;
-    int max_x = 0;
-    int temp_y = 0;
-    int max_y = 0;
-    vector<int>::const_iterator it;
+    
     for (int i=0; i<points.size()-1; i++){
-        temp_x = abs(points[i][0] - points[i+1][0]);
-        temp_y = abs(points[i][1] - points[i+1][1]);
-        if (temp_x>max_x) max_x = temp_x;
-        if (temp_y>max_y) max_y = temp_y;
-        if (max_x > max_y) {
-            ans += max_x;
-        } else {
-            ans += max_y;
+        ans += max(abs(points[i][0] - points[i+1][0]), abs(points[i][1] - points[i+1][1]));
         }
-    }
     return ans;
 }
 
