@@ -29,11 +29,12 @@ int gcda(const vector<int> &nums){
     int lcm = 1;
 
     for(auto n:nums){
-        if (n<mini) mini = n;
-        if (n>maxi) maxi = n;        
+        if (n<=mini) mini = n;
+        if (n>=maxi) maxi = n;        
     }
     //cout << mini << " " << maxi << endl;
-    for(int i=mini+1; i>=1; i--){
+    //for(int i=mini+1; i>=1; i--){
+    for (int i=2; i<=maxi; i++){
         //cout << maxi%i << " " << mini%i << " " << i << endl;
         if((maxi%i == 0) and (mini%i == 0)){
             lcm = i;
